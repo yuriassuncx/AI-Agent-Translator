@@ -1,0 +1,535 @@
+{
+  "\"Collars\"": "Colares",
+  "\"<p>Collection Collars</p>\"": "<p>Coleção Colares</p>",
+  "\"collars\"": "colares",
+  "\"Dogs\"": "Cães",
+  "\"<p>Collection Dogs</p>\"": "<p>Coleção Cães</p>",
+  "\"dogs\"": "caes",
+  "\"Standard Shipping\"": "Envio Padrão",
+  "\"Heavy Goods Shipping\"": "Envio de Mercadorias Pesadas",
+  "\"International Shipping\"": "Envio Internacional",
+  "\"Availability\"": "Disponibilidade",
+  "\"Price\"": "Preço",
+  "\"Size\"": "Tamanho",
+  "\"Product type\"": "Tipo de produto",
+  "\"Color\"": "Cor",
+  "\"Search\"": "Pesquisa",
+  "\"Orders\"": "Pedidos",
+  "\"Shop\"": "Loja",
+  "\"New\"": "Novo",
+  "\"Cats\"": "Gatos",
+  "\"About Us\"": "Sobre nós",
+  "{\"tone\":\"expert\",\"toneDescription\":\"\"}": {
+    "tone": "especialista",
+    "toneDescription": ""
+  },
+  "\"The collar features a new technology with ultra-protective external PVC rubber called NeoPro, which is resistant to water and weather conditions, preventing the collar from getting dirty, wet, or scratched.\"": "A coleira apresenta uma nova tecnologia com borracha PVC externa ultra-protetora chamada NeoPro, que é resistente à água e às condições climáticas, impedindo que a coleira fique suja, molhada ou arranhada.",
+  "[\"s\",\"m\",\"l\"]": [
+    "p",
+    "m",
+    "g"
+  ],
+  "\"Amazonia\"": "Amazônia",
+  "[\"Collar\"]": [
+    "Coleira"
+  ],
+  "[\"gid://shopify/MediaImage/26606008238180\",\"gid://shopify/MediaImage/26606008205412\",\"gid://shopify/MediaImage/26606008303716\",\"gid://shopify/MediaImage/26606008270948\"]": [
+    "gid://shopify/MediaImage/26606008238180",
+    "gid://shopify/MediaImage/26606008205412",
+    "gid://shopify/MediaImage/26606008303716",
+    "gid://shopify/MediaImage/26606008270948"
+  ],
+  "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Made of soft and durable polyester\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Fully adjustable\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Soft on your dog’s fur\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Buckle built with a 4-point lock system for added safety\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Crisp and bright colors\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Rubber logo protects stitches for longer durability\"}]}]}]}": {
+    "type": "root",
+    "children": [
+      {
+        "type": "list",
+        "listType": "unordered",
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Feito de poliéster macio e durável"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Totalmente ajustável"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Suave no pelo do seu cão"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Fivela construída com um sistema de travamento de 4 pontos para maior segurança"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Cores nítidas e brilhantes"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Logotipo de borracha protege as costuras para maior durabilidade"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"•\\tPolyester webbing.\\n•\\tRubber Zee.Dog skull, made of non-toxic material.\\n•\\tSoft texture to provide more comfort during walks.\\n•\\tBuckle with 4-point safety lock system.\\n•\\tAdjustable, to better fit the neck.\\n\"}]}]}": {
+    "type": "root",
+    "children": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "text",
+            "value": "•\tTira de poliéster.\n•\tCaveira de borracha Zee.Dog, feita de material não tóxico.\n•\tTextura suave para proporcionar mais conforto durante os passeios.\n•\tFivela com sistema de travamento de segurança de 4 pontos.\n•\tAjustável, para melhor se adaptar ao pescoço.\n"
+          }
+        ]
+      }
+    ]
+  },
+  "[\"gid://shopify/MediaImage/26690466709604\",\"gid://shopify/MediaImage/26690466742372\",\"gid://shopify/MediaImage/26690466775140\",\"gid://shopify/MediaImage/26690466676836\",\"gid://shopify/MediaImage/26690466807908\",\"gid://shopify/MediaImage/26690466840676\",\"gid://shopify/MediaImage/26690466971748\",\"gid://shopify/MediaImage/26690467004516\",\"gid://shopify/MediaImage/26690466873444\",\"gid://shopify/MediaImage/26690467037284\"]": [
+    "gid://shopify/MediaImage/26690466709604",
+    "gid://shopify/MediaImage/26690466742372",
+    "gid://shopify/MediaImage/26690466775140",
+    "gid://shopify/MediaImage/26690466676836",
+    "gid://shopify/MediaImage/26690466807908",
+    "gid://shopify/MediaImage/26690466840676",
+    "gid://shopify/MediaImage/26690466971748",
+    "gid://shopify/MediaImage/26690467004516",
+    "gid://shopify/MediaImage/26690466873444",
+    "gid://shopify/MediaImage/26690467037284"
+  ],
+  "\"Gotham\"": "Gotham",
+  "\"gid://shopify/MediaImage/26697401040996\"": "gid://shopify/MediaImage/26697401040996",
+  "[\"Black\"]": [
+    "Preto"
+  ],
+  "[\"Green\"]": [
+    "Verde"
+  ],
+  "\"gid://shopify/MediaImage/26606008172644\"": "gid://shopify/MediaImage/26606008172644",
+  "\"Green\"": "Verde",
+  "\"gid://shopify/MediaImage/26813234774116\"": "gid://shopify/MediaImage/26813234774116",
+  "{\"type\":\"root\",\"children\":[{\"listType\":\"unordered\",\"type\":\"list\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Elevated Bed\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Lightweight and portable\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Reinforced stitching\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Easy to clean\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Non-slippery feet\"}]}]}]}": {
+    "type": "root",
+    "children": [
+      {
+        "listType": "unordered",
+        "type": "list",
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Cama Elevada"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Leve e portátil"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Costura reforçada"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Fácil de limpar"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Pés antiderrapantes"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "\"Black\"": "Preto",
+  "\"gid://shopify/MediaImage/26813177725028\"": "gid://shopify/MediaImage/26813177725028",
+  "{\"type\":\"root\",\"children\":[{\"type\":\"list\",\"listType\":\"unordered\",\"children\":[{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Elevated Bed\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Lightweight and portable\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Reinforced stitching\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Easy to clean\"}]},{\"type\":\"list-item\",\"children\":[{\"type\":\"text\",\"value\":\"Non-slippery feet\"}]}]}]}": {
+    "type": "root",
+    "children": [
+      {
+        "type": "list",
+        "listType": "unordered",
+        "children": [
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Cama Elevada"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Leve e portátil"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Costura reforçada"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Fácil de limpar"
+              }
+            ]
+          },
+          {
+            "type": "list-item",
+            "children": [
+              {
+                "type": "text",
+                "value": "Pés antiderrapantes"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "\"Skull 2.0\"": "Caveira 2.0",
+  "[\"Black\",\"White\",\"Red\"]": [
+    "Preto",
+    "Branco",
+    "Vermelho"
+  ],
+  "\"gid://shopify/MediaImage/26913421394020\"": "gid://shopify/MediaImage/26913421394020",
+  "[\"gid://shopify/MediaImage/26913425096804\",\"gid://shopify/MediaImage/26913425064036\",\"gid://shopify/MediaImage/26913425129572\"]": [
+    "gid://shopify/MediaImage/26913425096804",
+    "gid://shopify/MediaImage/26913425064036",
+    "gid://shopify/MediaImage/26913425129572"
+  ],
+  "[\"Black\",\"Red\",\"White\"]": [
+    "Preto",
+    "Vermelho",
+    "Branco"
+  ],
+  "\"gid://shopify/MediaImage/26913461698660\"": "gid://shopify/MediaImage/26913461698660",
+  "[\"gid://shopify/MediaImage/26913458290788\",\"gid://shopify/MediaImage/26913458258020\",\"gid://shopify/MediaImage/26913458192484\",\"gid://shopify/MediaImage/26913458225252\",\"gid://shopify/MediaImage/26913458323556\"]": [
+    "gid://shopify/MediaImage/26913458290788",
+    "gid://shopify/MediaImage/26913458258020",
+    "gid://shopify/MediaImage/26913458192484",
+    "gid://shopify/MediaImage/26913458225252",
+    "gid://shopify/MediaImage/26913458323556"
+  ],
+  "\"gid://shopify/MediaImage/26913503314020\"": "gid://shopify/MediaImage/26913503314020",
+  "\"gid://shopify/MediaImage/26913526022244\"": "gid://shopify/MediaImage/26913526022244",
+  "\"gid://shopify/MediaImage/26913537294436\"": "gid://shopify/MediaImage/26913537294436",
+  "[\"White\",\"Black\",\"Red\"]": [
+    "Branco",
+    "Preto",
+    "Vermelho"
+  ],
+  "\"gid://shopify/MediaImage/26913558233188\"": "gid://shopify/MediaImage/26913558233188",
+  "\"Artsy\"": "Artístico",
+  "[\"Blue\",\"Yellow\",\"Black\",\"Orange\"]": [
+    "Azul",
+    "Amarelo",
+    "Preto",
+    "Laranja"
+  ],
+  "\"gid://shopify/MediaImage/26913603092580\"": "gid://shopify/MediaImage/26913603092580",
+  "[\"Yellow\",\"White\",\"Orange\",\"Blue\",\"Black\"]": [
+    "Amarelo",
+    "Branco",
+    "Laranja",
+    "Azul",
+    "Preto"
+  ],
+  "\"gid://shopify/MediaImage/26913619378276\"": "gid://shopify/MediaImage/26913619378276",
+  "[\"Leash\"]": [
+    "Trela"
+  ],
+  "[\"Blue\",\"Orange\",\"Black\",\"Yellow\"]": [
+    "Azul",
+    "Laranja",
+    "Preto",
+    "Amarelo"
+  ],
+  "\"gid://shopify/MediaImage/26913636483172\"": "gid://shopify/MediaImage/26913636483172",
+  "[\"Yellow\",\"Blue\",\"Orange\",\"Black\",\"White\"]": [
+    "Amarelo",
+    "Azul",
+    "Laranja",
+    "Preto",
+    "Branco"
+  ],
+  "\"gid://shopify/MediaImage/26913658011748\"": "gid://shopify/MediaImage/26913658011748",
+  "[\"Blue\",\"Yellow\",\"Orange\",\"Black\",\"White\"]": [
+    "Azul",
+    "Amarelo",
+    "Laranja",
+    "Preto",
+    "Branco"
+  ],
+  "\"gid://shopify/MediaImage/26913672134756\"": "gid://shopify/MediaImage/26913672134756",
+  "[\"Yellow\",\"White\",\"Orange\",\"Blue\"]": [
+    "Amarelo",
+    "Branco",
+    "Laranja",
+    "Azul"
+  ],
+  "\"gid://shopify/MediaImage/26913686880356\"": "gid://shopify/MediaImage/26913686880356",
+  "\"Midnight\"": "Meia-noite",
+  "[\"Pink\",\"White\",\"Black\",\"Blue\"]": [
+    "Rosa",
+    "Branco",
+    "Preto",
+    "Azul"
+  ],
+  "\"gid://shopify/MediaImage/26913697005668\"": "gid://shopify/MediaImage/26913697005668",
+  "[\"Blue\",\"Pink\",\"White\",\"Black\"]": [
+    "Azul",
+    "Rosa",
+    "Branco",
+    "Preto"
+  ],
+  "\"gid://shopify/MediaImage/26913709293668\"": "gid://shopify/MediaImage/26913709293668",
+  "\"gid://shopify/MediaImage/26913721548900\"": "gid://shopify/MediaImage/26913721548900",
+  "\"gid://shopify/MediaImage/26913740226660\"": "gid://shopify/MediaImage/26913740226660",
+  "\"gid://shopify/MediaImage/26913822277732\"": "gid://shopify/MediaImage/26913822277732",
+  "[\"Blue\",\"White\",\"Pink\",\"Black\"]": [
+    "Azul",
+    "Branco",
+    "Rosa",
+    "Preto"
+  ],
+  "\"gid://shopify/MediaImage/26913837056100\"": "gid://shopify/MediaImage/26913837056100",
+  "\"Smash\"": "Smash",
+  "[\"Yellow\",\"White\",\"Black\"]": [
+    "Amarelo",
+    "Branco",
+    "Preto"
+  ],
+  "\"gid://shopify/MediaImage/26913853538404\"": "gid://shopify/MediaImage/26913853538404",
+  "\"gid://shopify/MediaImage/26913867759716\"": "gid://shopify/MediaImage/26913867759716",
+  "\"gid://shopify/MediaImage/26913881456740\"": "gid://shopify/MediaImage/26913881456740",
+  "\"gid://shopify/MediaImage/26913895874660\"": "gid://shopify/MediaImage/26913895874660",
+  "\"gid://shopify/MediaImage/26913907343460\"": "gid://shopify/MediaImage/26913907343460",
+  "\"gid://shopify/MediaImage/26913917763684\"": "gid://shopify/MediaImage/26913917763684",
+  "\"Army Green\"": "Verde Exército",
+  "\"gid://shopify/MediaImage/26913940308068\"": "gid://shopify/MediaImage/26913940308068",
+  "\"gid://shopify/MediaImage/26913947582564\"": "gid://shopify/MediaImage/26913947582564",
+  "\"gid://shopify/MediaImage/26913960263780\"": "gid://shopify/MediaImage/26913960263780",
+  "\"gid://shopify/MediaImage/26913990082660\"": "gid://shopify/MediaImage/26913990082660",
+  "\"gid://shopify/MediaImage/26914002010212\"": "gid://shopify/MediaImage/26914002010212",
+  "\"gid://shopify/MediaImage/26914017443940\"": "gid://shopify/MediaImage/26914017443940",
+  "\"gid://shopify/MediaImage/26914021998692\"": "gid://shopify/MediaImage/26914021998692",
+  "\"gid://shopify/MediaImage/26914026717284\"": "gid://shopify/MediaImage/26914026717284",
+  "\"Neon Coral\"": "Coral Neon",
+  "[\"Pink\"]": [
+    "Rosa"
+  ],
+  "\"gid://shopify/MediaImage/26914035040356\"": "gid://shopify/MediaImage/26914035040356",
+  "\"gid://shopify/MediaImage/26914045526116\"": "gid://shopify/MediaImage/26914045526116",
+  "\"gid://shopify/MediaImage/26914054635620\"": "gid://shopify/MediaImage/26914054635620",
+  "\"gid://shopify/MediaImage/26914062041188\"": "gid://shopify/MediaImage/26914062041188",
+  "\"gid://shopify/MediaImage/26914070003812\"": "gid://shopify/MediaImage/26914070003812",
+  "\"gid://shopify/MediaImage/26914077081700\"": "gid://shopify/MediaImage/26914077081700",
+  "\"gid://shopify/MediaImage/26914084356196\"": "gid://shopify/MediaImage/26914084356196",
+  "\"gid://shopify/MediaImage/26914093727844\"": "gid://shopify/MediaImage/26914093727844",
+  "\"Bordeau\"": "Bordeau",
+  "[\"Red\"]": [
+    "Vermelho"
+  ],
+  "\"gid://shopify/MediaImage/26914102018148\"": "gid://shopify/MediaImage/26914102018148",
+  "\"bordeau\"": "bordeaux",
+  "\"gid://shopify/MediaImage/26914117419108\"": "gid://shopify/MediaImage/26914117419108",
+  "\"gid://shopify/MediaImage/26914124660836\"": "",
+  "\"gid://shopify/MediaImage/26914131050596\"": "gid://shopify/MediaImage/26914131050596",
+  "\"gid://shopify/MediaImage/26914135998564\"": "gid://shopify/MediaImage/26914135998564",
+  "\"gid://shopify/MediaImage/26914143076452\"": "gid://shopify/MediaImage/26914143076452",
+  "\"gid://shopify/MediaImage/26914154250340\"": "gid://shopify/MediaImage/26914154250340",
+  "\"honey\"": "mel",
+  "[\"Yellow\",\"Purple\",\"Black\",\"White\"]": [
+    "Amarelo",
+    "Roxo",
+    "Preto",
+    "Branco"
+  ],
+  "\"gid://shopify/MediaImage/26914174369892\"": "gid://shopify/MediaImage/26914174369892",
+  "\"sand\"": "areia",
+  "[\"Beige\"]": [
+    "Bege"
+  ],
+  "\"gid://shopify/MediaImage/26914200879204\"": "gid://shopify/MediaImage/26914200879204",
+  "\"gid://shopify/Video/26914205696100\"": "gid://shopify/Video/26914205696100",
+  "\"gotham\"": "gotham",
+  "\"gid://shopify/Video/26914211332196\"": "gid://shopify/Video/26914211332196",
+  "\"Soft Blue\"": "Azul Suave",
+  "[\"Blue\"]": [
+    "Azul"
+  ],
+  "\"gid://shopify/Video/26914216312932\"": "gid://shopify/Video/26914216312932",
+  "\"candy\"": "doce",
+  "[\"Yellow\",\"Blue\",\"White\",\"Purple\"]": [
+    "Amarelo",
+    "Azul",
+    "Branco",
+    "Roxo"
+  ],
+  "\"gid://shopify/MediaImage/26914226307172\"": "gid://shopify/MediaImage/26914226307172",
+  "\"gid://shopify/MediaImage/26914234794084\"": "gid://shopify/MediaImage/26914234794084",
+  "\"gid://shopify/MediaImage/26914244165732\"": "gid://shopify/MediaImage/26914244165732",
+  "\"gid://shopify/MediaImage/26914260418660\"": "gid://shopify/MediaImage/26914260418660",
+  "\"gid://shopify/MediaImage/26914269397092\"": "gid://shopify/MediaImage/26914269397092",
+  "\"gid://shopify/MediaImage/26914276245604\"": "gid://shopify/MediaImage/26914276245604",
+  "\"pacco\"": "pacco",
+  "[\"Brown\",\"White\",\"Beige\",\"Blue\"]": [
+    "Marrom",
+    "Branco",
+    "Bege",
+    "Azul"
+  ],
+  "\"gid://shopify/MediaImage/26914282242148\"": "gid://shopify/MediaImage/26914282242148",
+  "\"gid://shopify/MediaImage/26914290106468\"": "gid://shopify/MediaImage/26914290106468",
+  "\"gid://shopify/MediaImage/26914295873636\"": "gid://shopify/MediaImage/26914295873636",
+  "\"gid://shopify/MediaImage/26914303148132\"": "gid://shopify/MediaImage/26914303148132",
+  "[\"Green\",\"Brown\",\"Beige\",\"White\",\"Blue\"]": [
+    "Verde",
+    "Marrom",
+    "Bege",
+    "Branco",
+    "Azul"
+  ],
+  "\"gid://shopify/MediaImage/26973712089188\"": "gid://shopify/MediaImage/26973712089188",
+  "\"gid://shopify/MediaImage/26914315337828\"": "gid://shopify/MediaImage/26914315337828",
+  "\"volt\"": "volt",
+  "[\"Yellow\",\"Pink\",\"Gray\",\"Blue\"]": [
+    "Amarelo",
+    "Rosa",
+    "Cinza",
+    "Azul"
+  ],
+  "\"gid://shopify/MediaImage/27021464010852\"": "gid://shopify/MediaImage/27021464010852",
+  "[\"Blue\",\"Yellow\",\"Gray\",\"Pink\"]": [
+    "Azul",
+    "Amarelo",
+    "Cinza",
+    "Rosa"
+  ],
+  "\"gid://shopify/MediaImage/26914334015588\"": "gid://shopify/MediaImage/26914334015588",
+  "[\"Yellow\",\"Gray\",\"Blue\",\"Pink\"]": [
+    "Amarelo",
+    "Cinza",
+    "Azul",
+    "Rosa"
+  ],
+  "\"gid://shopify/MediaImage/26914339717220\"": "gid://shopify/MediaImage/26914339717220",
+  "[\"Yellow\",\"Blue\",\"Pink\",\"Gray\"]": [
+    "Amarelo",
+    "Azul",
+    "Rosa",
+    "Cinza"
+  ],
+  "\"gid://shopify/MediaImage/26914347941988\"": "gid://shopify/MediaImage/26914347941988",
+  "[\"Pink\",\"Gray\",\"Yellow\",\"Blue\"]": [
+    "Rosa",
+    "Cinza",
+    "Amarelo",
+    "Azul"
+  ],
+  "\"gid://shopify/MediaImage/26914354233444\"": "gid://shopify/MediaImage/26914354233444",
+  "\"cinnamon\"": "canela",
+  "[\"Pink\",\"Purple\"]": [
+    "Rosa",
+    "Roxo"
+  ],
+  "\"gid://shopify/MediaImage/26914364293220\"": "gid://shopify/MediaImage/26914364293220",
+  "\"boogie\"": "boogie",
+  "[\"Green\",\"Gray\",\"Purple\",\"Beige\"]": [
+    "Verde",
+    "Cinza",
+    "Roxo",
+    "Bege"
+  ],
+  "\"gid://shopify/MediaImage/26914369437796\"": "gid://shopify/MediaImage/26914369437796",
+  "\"jumper\"": "suéter",
+  "[\"Orange\",\"Green\",\"Blue\",\"Yellow\"]": [
+    "Laranja",
+    "Verde",
+    "Azul",
+    "Amarelo"
+  ],
+  "\"gid://shopify/MediaImage/26914376319076\"": "gid://shopify/MediaImage/26914376319076",
+  "\"army green\"": "verde exército",
+  "\"gid://shopify/MediaImage/26914384380004\"": "gid://shopify/MediaImage/26914384380004",
+  "\"neon coral\"": "coral néon",
+  "\"gid://shopify/MediaImage/26914390671460\"": "gid://shopify/MediaImage/26914390671460",
+  "\"gid://shopify/MediaImage/26914398928996\"": "gid://shopify/MediaImage/26914398928996",
+  "[\"Pink\",\"Orange\",\"Beige\",\"Purple\"]": [
+    "Rosa",
+    "Laranja",
+    "Bege",
+    "Roxo"
+  ],
+  "\"gid://shopify/MediaImage/26914408300644\"": "gid://shopify/MediaImage/26914408300644"
+}
