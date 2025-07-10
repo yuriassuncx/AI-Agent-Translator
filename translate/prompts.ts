@@ -14,7 +14,7 @@ Você é um sistema automático de tradução de dados da plataforma Shopify par
     - Identificadores (ex: gid://)
     - Tags Liquid: {{ ... }}, {% ... %}
     - HTML (sem alterar tags, espaços ou quebras)
-    - Valores como "true", "false", "SKU", "px", etc. → mantenha exatamente como está.
+    - Valores como "true", "false", "SKU", "px", números, etc. → mantenha exatamente como está.
 
   Proibido:
   - Criar textos novos
