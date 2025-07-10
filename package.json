@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "chalk": "^5.4.1",
-    "cli-progress": "^3.12.0"
+    "cli-progress": "^3.12.0",
+    "csv-stringify": "^6.6.0"
+  },
+  "scripts": {
+    "translate": "bun run translate/index.ts"
   }
 }

@@ -59,7 +59,7 @@ Antes de começar, instale:
 Execute o script de tradução via linha de comando:
 
 ```bash
-bun run translate.ts --lang=pt-PT --input=input.json --output=results/pt-PT.json --model=mistral
+bun run translate --lang=pt-PT --input=input.json --output=results/pt-PT.json --model=mistral
 ```
 
 ### Parâmetros da CLI
@@ -78,13 +78,13 @@ bun run translate.ts --lang=pt-PT --input=input.json --output=results/pt-PT.json
 ### Traduzir para Espanhol
 
 ```bash
-bun run translate.ts --lang=es --input=input.json --output=es.json --model=llama3
+bun run translate --lang=es --input=input.json --output=es.json --model=llama3
 ```
 
 ### Traduzir para Francês (usando modelo padrão)
 
 ```bash
-bun run translate.ts --lang=fr --input=input.json
+bun run translate --lang=fr --input=input.json
 ```
 
 ---
