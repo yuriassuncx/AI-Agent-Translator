@@ -1,41 +1,43 @@
-// translate.ts
-import { Agent, run } from '@openai/agents';
-import { config } from 'dotenv';
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { dirname, join } from 'path';
 import cliProgress from 'cli-progress';
 import chalk from 'chalk';
-import languages from './languages.json';
-
-config();
-
-// ==== Verifica se a chave da OpenAI está presente ====
-if (!process.env.OPENAI_API_KEY) {
-  console.error(chalk.red('❌ Variável OPENAI_API_KEY não encontrada no ambiente.'));
-  process.exit(1);
-} else {
-  console.log(chalk.green('✅ OPENAI_API_KEY carregada com sucesso.'));
-}
+import languages from './languages/languages.json';
 
 // ==== CLI ARGS ====
 const args = process.argv.slice(2);
-const getArg = (key: string, fallback?: string) => {
+const getArg = (key: string, fallback: string): string => {
   const found = args.find((a) => a.startsWith(`${key}=`));
-  return found ? found.split('=')[1] : fallback;
+  const result = found ? found.split('=')[1] : fallback;
+  if (!result) {
+    throw new Error(`❌ Argumento obrigatório ausente: ${key}`);
+  }
+  return result;
 };
 
-const targetLang = getArg('--lang', 'pt-PT')!;
-const model = getArg('--model', 'gpt-4')!;
-const inputPath = getArg('--input', 'input.json')!;
-const outputPath = getArg('--output', 'translated.json')!;
-const CHUNK_SIZE = 10;
-const CACHE_PATH = 'cache.json';
-const LAST_RESPONSE_PATH = 'last-response.json';
+const targetLang = getArg('--lang', 'pt-PT');
+const inputPath = getArg('--input', 'input.json');
+
+// Garante que output está dentro de results/ com nome padrão targetLang.json
+const rawOutput = getArg('--output', `${targetLang}.json`);
+const outputPath = rawOutput.includes('/') || rawOutput.includes('\\')
+  ? rawOutput
+  : join('results', rawOutput);
+
+const model = getArg('--model', 'mistral');
+
+const cacheDir = 'cache';
+const cachePath = join(cacheDir, `${targetLang}.json`);
+const resultsDir = dirname(outputPath);
 const MAX_RETRIES = 2;
 
 if (!languages[targetLang]) {
   console.error(chalk.red(`❌ Idioma não suportado: ${targetLang}`));
   process.exit(1);
 }
+
+if (!existsSync(cacheDir)) mkdirSync(cacheDir, { recursive: true });
+if (resultsDir !== '.' && !existsSync(resultsDir)) mkdirSync(resultsDir, { recursive: true });
 
 interface TranslationEntry {
   Type: string;
@@ -50,8 +52,8 @@ interface TranslationEntry {
 
 const loadCache = (): Record<string, unknown> => {
   try {
-    return existsSync(CACHE_PATH)
-      ? JSON.parse(readFileSync(CACHE_PATH, 'utf-8'))
+    return existsSync(cachePath)
+      ? JSON.parse(readFileSync(cachePath, 'utf-8'))
       : {};
   } catch {
     return {};
@@ -59,120 +61,142 @@ const loadCache = (): Record<string, unknown> => {
 };
 
 const saveCache = (cache: Record<string, unknown>) => {
-  writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2));
+  writeFileSync(cachePath, JSON.stringify(cache, null, 2));
 };
 
 const makeCacheKey = (value: unknown): string => {
   return JSON.stringify(value);
 };
 
-const translatorAgent = new Agent({
-  name: 'json-translator',
-  model,
-  instructions: `
-Você é um tradutor especializado em arquivos JSON estruturados exportados do Shopify Translate & Adapt. Siga as regras abaixo com exatidão.
+const isSkippable = (val: unknown): boolean => {
+  if (!val) return true;
+  if (typeof val === 'string') {
+    return val.startsWith('gid://') || val.startsWith('shopify://') || val.includes('cdn.shopify.com');
+  }
+  if (Array.isArray(val)) {
+    return val.every((v) => typeof v === 'string' && (v.startsWith('gid://') || v.startsWith('shopify://')));
+  }
+  return false;
+};
 
-REGRAS OBRIGATÓRIAS:
+const cleanResponse = (input: unknown, response: string): unknown => {
+  const trimmed = response.trim();
 
-1. Traduza apenas os valores textuais legíveis por humanos presentes na chave "Default content" de cada item.
-2. Nunca modifique ou confunda o campo "Default content". Ele deve permanecer exatamente como está. A tradução deve ser inserida somente no campo "Translated content".
-3. Preserve totalmente a estrutura JSON, incluindo objetos, arrays, tipos, identificadores e demais chaves.
+  // Rejeita comentários e explicações
+  const containsComentario = /mantive|tradu[çc][aã]o|explica[çc][aã]o|não existe necessidade/i.test(trimmed);
+  if (containsComentario) return input;
 
-Traduza apenas:
-- Strings dentro da propriedade "Default content".
-- Se o conteúdo for um array ou objeto, apenas traduza os valores das chaves:
-  - value
-  - text
-  - label
-  - title (se for textual e não um identificador)
+  // Remove aspas duplicadas de string simples
+  if (typeof input === 'string' && /^".*"$/.test(trimmed)) {
+    return trimmed.slice(1, -1);
+  }
 
-Não traduza:
-- Códigos Liquid: {{ ... }}, {% ... %}
-- HTML: Preserve tags e estrutura.
-- Identificadores como: gid://..., shopify://... Ou arrays contendo esses identificadores.
-- URLs, e-mails, handles e qualquer string técnica.
-- Chaves como type, listType, children, Field, Identification, etc. Se houver children, traduza apenas os valores "value" deles.
+  // Corrige objetos ou arrays retornados como string
+  if ((trimmed.startsWith('{') && trimmed.endsWith('}')) || (trimmed.startsWith('[') && trimmed.endsWith(']'))) {
+    try {
+      return JSON.parse(trimmed);
+    } catch {
+      console.warn(chalk.yellow('⚠️ Falha ao fazer parse de resposta como JSON.'));
+    }
+  }
 
-Se um campo já estiver em português ou for igual ao original, copie o conteúdo para "Translated content".
+  return trimmed;
+};
 
-Formato de saída: Um JSON completo, exatamente igual ao original, com os campos "Translated content" preenchidos com a tradução correta.
-`.trim(),
-});
+const translateLocally = async (input: unknown): Promise<unknown> => {
+  const formattedPrompt = `Você é um sistema automático de tradução de dados da plataforma Shopify para a Zeedog, ecommerce focado em produtos para cães e gatos. Sua única função é traduzir **somente** o conteúdo textual humano, mantendo 100% da estrutura original dos dados.
+
+  IMPORTANTE: você deve retornar exatamente o mesmo tipo de valor que recebeu (string, array, objeto). NUNCA escreva explicações, comentários ou justificativas.
+
+  REGRAS ESTRITAS:
+  - Nunca altere o tipo dos dados (string, array, objeto).
+  - Nunca adicione nem remova chaves, campos ou posições.
+  - Nunca serialize conteúdo como string (ex: não envolva objetos/arrays em aspas).
+  - Preserve a capitalização exatamente como no conteúdo original.
+  - Nunca traduza valores técnicos como:
+    - URLs
+    - Emails
+    - Identificadores (ex: gid://)
+    - Tags Liquid: {{ ... }}, {% ... %}
+    - HTML (sem alterar tags, espaços ou quebras)
+    - Valores como "true", "false", "SKU", "px", etc. → mantenha exatamente como está.
+
+  Proibido:
+  - Criar textos novos
+  - Adicionar comentários
+  - Explicar ou justificar traduções
+  - Alterar estrutura, indentação, ou formatação
+
+  Exemplos:
+  - "title": "Collars" → "Colares"
+  - "text": "<p>Hello World</p>" → "<p>Olá Mundo</p>"
+  - ["s", "m", "l"] → ["p", "m", "g"] (identificar idioma e traduzir tamanhos se for necessário, mas manter a mesma estrutura)
+
+  Idioma de destino: ${targetLang}
+
+  Conteúdo a ser traduzido (retorne apenas o valor, no mesmo formato, evite explicações ou comentários):
+
+  ${JSON.stringify(input, null, 2)}
+  `;
+
+  const res = await fetch('http://localhost:11434/api/generate', {
+    method: 'POST',
+    body: JSON.stringify({
+      model,
+      prompt: formattedPrompt,
+      stream: false,
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  const result = await res.json();
+  return cleanResponse(input, result.response);
+};
 
 const data: TranslationEntry[] = JSON.parse(readFileSync(inputPath, 'utf-8'));
 const cache = loadCache();
-const translatedChunks: TranslationEntry[] = [];
 const progressBar = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
 progressBar.start(data.length, 0);
 
-for (let i = 0; i < data.length; i += CHUNK_SIZE) {
-  const chunk = data.slice(i, i + CHUNK_SIZE);
-  const uncached = chunk.filter((item) => {
+(async () => {
+  for (let i = 0; i < data.length; i++) {
+    const item = data[i];
     const key = makeCacheKey(item['Default content']);
-    return !cache[key];
-  });
 
-  if (uncached.length === 0) {
-    for (const item of chunk) {
-      item['Translated content'] = cache[makeCacheKey(item['Default content'])];
+    if (cache[key]) {
+      item['Translated content'] = cache[key];
+      progressBar.increment();
+      continue;
     }
-    translatedChunks.push(...chunk);
-    progressBar.update(Math.min(i + CHUNK_SIZE, data.length));
-    continue;
-  }
 
-  console.log(chalk.gray(`🔍 Traduzindo bloco de ${uncached.length} itens...`));
+    if (isSkippable(item['Default content'])) {
+      item['Translated content'] = '';
+      cache[key] = '';
+      progressBar.increment();
+      continue;
+    }
 
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      const prompt = `Traduza o seguinte bloco:\n\n${JSON.stringify(uncached, null, 2)}`;
-      const response = await run(translatorAgent, prompt);
-
-      if (typeof response.finalOutput !== 'string') {
-        throw new Error('Resposta inesperada do agente');
-      }
-
-      writeFileSync(LAST_RESPONSE_PATH, response.finalOutput);
-
-      let translated: TranslationEntry[];
-
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
       try {
-        translated = JSON.parse(response.finalOutput);
-      } catch (jsonErr) {
-        console.error(chalk.red('❌ Erro ao fazer parse do JSON retornado. Veja last-response.json.'));
-        throw jsonErr;
-      }
-
-      for (let j = 0; j < uncached.length; j++) {
-        const key = makeCacheKey(uncached[j]['Default content']);
-        const translatedText = translated[j]?.['Translated content'];
-        if (translatedText !== undefined) {
-          cache[key] = translatedText;
-          uncached[j]['Translated content'] = translatedText;
+        const translated = await translateLocally(item['Default content']);
+        item['Translated content'] = translated;
+        cache[key] = translated;
+        saveCache(cache);
+        break;
+      } catch (err: any) {
+        console.warn(chalk.yellow(`⚠️ Tentativa ${attempt} falhou para item ${i}: ${err.message || err}`));
+        if (attempt === MAX_RETRIES) {
+          item['Translated content'] = '';
         }
-      }
-
-      saveCache(cache);
-
-      for (const item of chunk) {
-        const key = makeCacheKey(item['Default content']);
-        if (cache[key]) {
-          item['Translated content'] = cache[key];
-        }
-      }
-
-      translatedChunks.push(...chunk);
-      progressBar.update(Math.min(i + CHUNK_SIZE, data.length));
-      break;
-    } catch (err: any) {
-      console.warn(chalk.yellow(`⚠️ Tentativa ${attempt} falhou: ${err.message || err}`));
-      if (attempt === MAX_RETRIES) {
-        console.error(chalk.red('❌ Todas as tentativas falharam para este bloco. Pulando...'));
       }
     }
-  }
-}
 
-progressBar.stop();
-writeFileSync(outputPath, JSON.stringify(translatedChunks, null, 2));
-console.log(chalk.green(`\n✅ Tradução finalizada com sucesso: ${outputPath}`));
+    progressBar.increment();
+  }
+
+  progressBar.stop();
+  writeFileSync(outputPath, JSON.stringify(data, null, 2));
+  console.log(chalk.green(`\n✅ Tradução finalizada com sucesso: ${outputPath}`));
+})();
