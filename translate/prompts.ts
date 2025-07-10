@@ -29,7 +29,7 @@ Você é um sistema automático de tradução de dados da plataforma Shopify par
 
   Idioma de destino: ${targetLang}
 
-  Conteúdo a ser traduzido (retorne apenas o valor, no mesmo formato, evite explicações ou comentários):
+  Conteúdo a ser traduzido (retorne apenas o valor, no mesmo formato, evite obrigatoriamente explicações ou comentários):
 
   ${JSON.stringify(input, null, 2)}
 `;
